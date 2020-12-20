@@ -1,6 +1,6 @@
 # Miku Music Bot
 ## Bot commands
-- `!play <track name>` play track by name or author (any key work in title).
+- `!play <track name>` play track by name or author (any key word in title).
 - `!stop` stop bot from playing.
 - `!random` bot starts to play all of uploaded tracks in random order non-stop. Sending this command second time will stop playing.
 - `!skip` skips one track in queue.
