@@ -10,12 +10,6 @@ export function out(messageText: string, threadName: string): void {
 	return log(messageText, 'out', threadName);
 }
 
-/**
- * Добавляет запись в лог ошибок.
- * @param {String} messageText Текст сообщения.
- * @param {Error} raw Объект ошибки.
- * @param {String} threadName Имя процесса.
- */
 export function error(messageText, raw, threadName) {
 	return log(messageText, 'error', threadName, raw);
 }
