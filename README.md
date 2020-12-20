@@ -12,7 +12,7 @@
 - `!-1` rates current playing track -1.
 
 ## Usage
-Bot requires Node.js 12+ and MongoDB running on the machine.  
+Bot requires Node.js 12+, ffmpeg and MongoDB running on the machine.  
 *This is an example bot token*
 ```js
 const { MikuBot } = require('miku-bot');
