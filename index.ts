@@ -22,9 +22,12 @@ export class MikuBot extends Discord.Client {
 	private randomQueues: {[serverId: string]: Track[]} = {};
 	private settings: Settings;
 	private initialized: boolean = false;
+	private tracksDir: string;
 
-	constructor (token: string) {
+	constructor (token: string, tracksDir: string) {
 		super();
+
+		this.tracksDir = tracksDir;
 
 		SettingsModel.findOne({}).then(async (settingsDoc) => {
 			let settings = settingsDoc as Settings;
@@ -328,7 +331,7 @@ export class MikuBot extends Discord.Client {
 
 				let attachment = msg.attachments.first();
 				let fsNameId = generateRandomString(128);
-				let fsName = path.resolve(process.cwd(), `./tracks/uploaded/${fsNameId}${path.extname(attachment.name)}`);
+				let fsName = path.resolve(this.tracksDir, `${fsNameId}${path.extname(attachment.name)}`);
 
 				const file = fs.createWriteStream(fsName);
 				https.get(attachment.url, (res) => {
