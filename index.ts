@@ -73,14 +73,14 @@ export class MikuBot extends Discord.Client {
 				});
 
 				const wordsGrouped = trackQuery.map((x) => {
-					if (x.length == 3) {
+					if (x && x.length == 3) {
 						let author = x[1];
 						let title = x[2];
 			
 						return author.split(' ').concat(title.split(' '));
 					}
 			
-					return;
+					return [];
 				});
 
 				const queryWords = query.toLowerCase()
